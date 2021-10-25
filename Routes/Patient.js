@@ -1,8 +1,9 @@
 const express = require('express');
-const { addPatient, getAllPatients, updatePatient } = require('../controllers/Patient');
+const { addPatient, getAllPatients, updatePatient, deletePatient } = require('../controllers/Patient');
+const authAdmin = require('../Middleware/auth-admin');
 const router = express.Router()
 
 router.route('/').post(addPatient).get(getAllPatients)
-router.route('/:id').put(updatePatient)
+router.route('/:id').put(updatePatient).delete(authAdmin, deletePatient)
 
 module.exports = router

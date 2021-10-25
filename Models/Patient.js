@@ -13,6 +13,10 @@ const PatientSchema = mongoose.Schema({
         type: Number,
         required: true
     },
+    gender:{
+        type:String,
+        enum: ["man", "woman"]
+    },
     visits: {
         type: Number,
         default: 1

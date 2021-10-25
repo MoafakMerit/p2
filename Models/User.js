@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require ('jsonwebtoken')
 require("dotenv")
 
-const DoctorSchema = mongoose.Schema({
+const UserSchema = mongoose.Schema({
     name:{
         type: String,
         required: true,
@@ -25,19 +25,23 @@ const DoctorSchema = mongoose.Schema({
         type: String,
         require: true
     },
+    admin: {
+        type: Boolean,
+        default: false
+    }
 })
 
 
-DoctorSchema.pre('save', async function (next) {
+UserSchema.pre('save', async function (next) {
         this.password = await bcrypt.hash(this.password, 10);
         next()
     }
 )
 
-DoctorSchema.methods.createJWT = function() {
-    return jwt.sign({id:this.id, name: this.name}, process.env.jwt_secret, {expiresIn:"30d"})
+UserSchema.methods.createJWT = function() {
+    return jwt.sign({id:this.id, admin: this.admin}, process.env.jwt_secret, {expiresIn:"30d"})
 }
 
-const Doctor = mongoose.model("doctors", DoctorSchema)
+const User = mongoose.model("users", UserSchema)
 
-module.exports = Doctor
+module.exports = User
