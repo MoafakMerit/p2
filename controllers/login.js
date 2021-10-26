@@ -15,7 +15,7 @@ const login = async (req, res) => {
         if (checkedPassword) {
             const token = await checkedDoctor.createJWT()
             res.status(StatusCodes.OK).json(`logged in with token ${token}!`)
-            return writeFileSync('./sys/t.txt', `${token}`)
+            return writeFileSync('./temp/t.txt', `${token}`)
         }
     }
     const checkedUser = await User.findOne({ email: email })
@@ -24,7 +24,7 @@ const login = async (req, res) => {
         if (checkedPassword) {
             const token = await checkedUser.createJWT()
             res.status(StatusCodes.OK).json(`logged in with token ${token}!`)
-            return writeFileSync('./sys/t.txt', `${token}`)
+            return writeFileSync('./temp/t.txt', `${token}`)
         }
     }
     return res.status(StatusCodes.BAD_REQUEST).json("Email or password is not correct")

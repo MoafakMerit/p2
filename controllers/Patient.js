@@ -36,11 +36,19 @@ const deletePatient = async (req, res) => {
 // Search for patient
 
 const searchPatient = async (req, res) => {
-    const { name } = req.query
+    const { name, age } = req.query
+    queryObject = {}
+
     const patient = await Patient.findOne({ name: name })
     if (!patient) {
         return res.status(StatusCodes.BAD_REQUEST).json(`${name} not found!`)
     }
+    if (age) {
+        queryObject.age = age
+
+    }
+
+
     res.status(StatusCodes.OK).json({ patient })
 }
 
