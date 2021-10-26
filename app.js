@@ -13,6 +13,7 @@ require('dotenv').config()
 require('express-async-errors')
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.use('/login', loginRout)
 app.use('/logout', logoutRout)
