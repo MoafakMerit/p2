@@ -16,7 +16,7 @@ const addPatient = async (req, res) => {
 
 // Update patient
 const updatePatient = async (req, res) => {
-    const doctorID = req.user._id
+    const doctorID = req.user.id
     const { id } = req.params
     const { visits } = req.body
     const updatedPatient = await Patient.findByIdAndUpdate({ _id: id }, { updatedBy: doctorID, visits: visits }, { new: true })
