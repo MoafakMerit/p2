@@ -14,8 +14,8 @@ const addCenter = async (req, res) => {
 // Get a Center
 
 const getACenter = async (req, res) => {
-    const { id: CenterID } = req.params
-    const center = await Center.findOne({ _id: CenterID })
+    const { id: centerID } = req.params
+    const center = await Center.findOne({ _id: centerID })
     if (!center)
         return res.status(StatusCodes.BAD_REQUEST).json(`Center not found!`);
 

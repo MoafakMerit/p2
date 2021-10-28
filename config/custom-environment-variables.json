@@ -1,7 +1,9 @@
-
-
 {
-    "Token":{
-        "Path": "t_ANAMEP.txt"
+    "mail":{
+        "host":"P2_mailHostname",
+        "port":"P2_port",
+        "from:":"P2_from",
+        "password": "P2_mailPassword"
     }
+
 }

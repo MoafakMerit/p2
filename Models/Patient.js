@@ -8,6 +8,7 @@ const PatientSchema = mongoose.Schema({
     email:{
         type: String,
         require: true,
+        unique: true
     },
     age:{
         type: Number,
