@@ -9,7 +9,6 @@ const CenterSchema = mongoose.Schema({
         required: true,
     },
     adress:{
-        required: true,
         postalcode: Number,
         street: String,
         city: String,
@@ -17,12 +16,12 @@ const CenterSchema = mongoose.Schema({
     },
     email:{
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     telnr:{
         type: Number,
-        require: true
+        required: true
     }
 })
 
