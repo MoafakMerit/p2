@@ -17,7 +17,7 @@ const auth = async (req, res, next) => {
         checkedPassword = await bcrypt.compare(password, checkedDoctor.password)
         if (checkedPassword) {
             const token = await checkedDoctor.createJWT()
-            res.header('x-auth-token',token).status(StatusCodes.OK)
+            res.header('Authoraization',token).status(StatusCodes.OK)
          
         }
         next()
