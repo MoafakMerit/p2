@@ -23,7 +23,6 @@ const addReport = async (req, res) => {
     const patientEmail = patient.patient.email
     res.status(StatusCodes.CREATED).json(report)
      
-    //console.log(dateFns.differenceInMilliseconds(Date(nextVisit), Date(dateOfReport))  )
     // send reminder one day befor the next visit
     const timeOut = dateFns.differenceInMilliseconds(dateOfReminder, dateOfReport)
     console.log( timeOut ) 
