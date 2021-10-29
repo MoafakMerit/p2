@@ -28,6 +28,6 @@ const PatientSchema = mongoose.Schema({
     }
 })
 
-const Patient = mongoose.model('patients', PatientSchema)
+const Patient = mongoose.model('Patient', PatientSchema)
 
 module.exports = Patient

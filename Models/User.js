@@ -42,6 +42,6 @@ UserSchema.methods.createJWT = function() {
     return jwt.sign({id:this.id, admin: this.admin}, process.env.jwt_secret, {expiresIn:"30d"})
 }
 
-const User = mongoose.model("users", UserSchema)
+const User = mongoose.model("User", UserSchema)
 
 module.exports = User

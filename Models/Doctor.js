@@ -38,6 +38,6 @@ DoctorSchema.methods.createJWT = function() {
     return jwt.sign({id:this.id, name: this.name}, process.env.jwt_secret, {expiresIn:"30d"})
 }
 
-const Doctor = mongoose.model("doctors", DoctorSchema)
+const Doctor = mongoose.model("Doctor", DoctorSchema)
 
 module.exports = Doctor

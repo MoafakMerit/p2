@@ -9,6 +9,7 @@ const userRout = require('./Routes/User')
 const logoutRout = require('./Routes/logout')
 const centerRout = require('./Routes/Center')
 const guestRout = require('./Routes/Guest')
+const reportRout = require('./Routes/Report')
 const path = require('path');
 const middlewareErrorHandler = require('./Middleware/error-handler');
 const port = process.env.Port || 5000
@@ -25,6 +26,7 @@ app.use('/api/v1/doctors', doctorRout)
 app.use('/api/v1/patients', patientRout)
 app.use('/api/v1/centers', centerRout)
 app.use('/api/v1/guests', guestRout)
+app.use('/api/v1/reports', reportRout)
 
 app.use(notFound)
 app.use(middlewareErrorHandler)

@@ -50,6 +50,6 @@ var mailOptions = {
 }
 
 
-const Guest = mongoose.model('guests', GuestSchema)
+const Guest = mongoose.model('Guest', GuestSchema)
 
 module.exports = Guest

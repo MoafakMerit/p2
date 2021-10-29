@@ -26,6 +26,6 @@ const CenterSchema = mongoose.Schema({
 })
 
 
-const Center = mongoose.model("centers", CenterSchema)
+const Center = mongoose.model("Center", CenterSchema)
 
 module.exports = Center
