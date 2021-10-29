@@ -45,6 +45,7 @@ const searchReport = async (req, res) => {
 // Get all Reports
 
 const getAllReports = async (req, res) => {
+    throw new Error("cannot get reports for some reason! :( ")
     const allReports = await Report.find()
     res.status(StatusCodes.OK).json(allReports)
 }
